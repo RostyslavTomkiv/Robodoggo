@@ -68,6 +68,8 @@ class RoboDogBuilder {
       },
       ...this.commands
     };
+    // Freeze the created object to prevent modification
+    return Object.freeze(roboDog);
   }
 
   generateUUID() {
@@ -95,3 +97,9 @@ const alf = new RoboDogBuilder('Alf')
 
 alf.bark();
 alf.attackEnemy();
+
+// check if we can change a property
+alf.intelligence = 8; // This will not change the value due to Object.freeze
+console.log('Alf inteligense is still ', alf.intelligence); // Output: 10
+
+
