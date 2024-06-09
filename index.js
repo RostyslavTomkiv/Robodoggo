@@ -49,7 +49,7 @@ class RoboDogBuilder {
     if (!this.uuid) {
       throw new Error("UUID is required before building.");
     }
-    return {
+    const roboDog = {
       name: this.name,
       intelligence: this.intelligence,
       aggression: this.aggression,
@@ -100,6 +100,4 @@ alf.attackEnemy();
 
 // check if we can change a property
 alf.intelligence = 8; // This will not change the value due to Object.freeze
-console.log('Alf inteligense is still ', alf.intelligence); // Output: 10
-
-
+console.log('Alf intelligence is still ', alf.intelligence); // Output: 10
